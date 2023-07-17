@@ -1,5 +1,5 @@
 /**
- * @project: mas-lib
+ * @project: mas-lib (https://github.com/anpydx/mas)
  * @brief Vector Helper Functions
  * @version 0.1
  */

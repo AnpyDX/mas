@@ -1,5 +1,5 @@
 /**
- * @project: mas-lib
+ * @project: mas-lib (https://github.com/anpydx/mas)
  * @brief The header of mas-lib entry
  * @version 0.1
  * @date 2023-07-16
@@ -15,9 +15,7 @@
 #include "Types/Vector/Vector4.hpp"
 #include "Types/Vector/Helper.hpp"
 
-
-#define MAS_LTYPE_FLOAT
-/* lite types marco */
+/* Lite Type marco */
 namespace mas {
 #ifdef MAS_LTYPE_INT
     using vec2 = Vector2<int>;
