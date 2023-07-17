@@ -65,14 +65,14 @@ namespace mas {
         return v * n;
     }
 
-    template <typename T1, typename T2>
-    inline Vector2<T1> operator/(const Vector2<T1>& v, const T2& n) {
-        return Vector2<T1> { v.x / static_cast<T1>(n), v.y / static_cast<T1>(n) };
+    template <typename T>
+    inline Vector2<T> operator/(const Vector2<T>& v, const T& n) {
+        return Vector2<T> { v.x / static_cast<T>(n), v.y / static_cast<T>(n) };
     }
 
-    template <typename T1, typename T2>
-    inline Vector2<T2> operator/(const T1& n, const Vector2<T2>& v) {
-        return Vector2<T2> { static_cast<T2>(n) / v.x, static_cast<T2>(n) / v.y };
+    template <typename T>
+    inline Vector2<T> operator/(const T& n, const Vector2<T>& v) {
+        return Vector2<T> { static_cast<T>(n) / v.x, static_cast<T>(n) / v.y };
     }
-    
+
 };
