@@ -1,4 +1,4 @@
-# Mas Library
+# Mas-Lib
 `Mas` is a C++ math library for graphics.
 
 ## Features
@@ -19,4 +19,4 @@
 More details can be found in [Document](Documents.md).
 
 ## License
-Project is under `MIT License`.
+Licensed under the *MIT license*, see [LICENSE](LICENSE) for details.
