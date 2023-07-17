@@ -6,6 +6,7 @@
 
 #pragma once
 #include <cmath>
+#include "Vector2.hpp"
 
 namespace mas {
 
@@ -15,6 +16,9 @@ namespace mas {
         Vector3() = default;
         explicit Vector3(const T& n)
         : x(n), y(n), z(n) {}
+
+        Vector3(const Vector2<T>& v, const T& z)
+        : x(v.x), y(v.y), z(z) {}
 
         Vector3(const T& x, const T& y, const T& z)
         : x(x), y(y), z(z) {}

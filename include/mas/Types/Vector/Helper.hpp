@@ -43,12 +43,19 @@ namespace mas {
     
 
     /** @section Get Vector Length */
+    template <typename T>
+    inline T length(Vector2<T> v) {
+        return std::sqrt(std::pow(v.x, 2) + std::pow(v.y, 2));
+    }
 
     /** @section Get Normalized Vector */
+    template <typename T>
+    inline Vector2<T> normalize(Vector2<T> v) {
+        double v_len = length(v);
+        return Vector2<T> { v.x / static_cast<T>(v_len), v.y /static_cast<T>(v_len) };
+    }
 
-    /**
-     * @brief Dot Product of Vector
-     */
+    /** @section Dot Product of Vector */
     template <typename T>
     T dot(const Vector2<T>& v1, const Vector2<T>& v2) {
         return v1.x * v2.x + v1.y * v2.y;

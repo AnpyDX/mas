@@ -74,15 +74,5 @@ namespace mas {
     inline Vector2<T2> operator/(const T1& n, const Vector2<T2>& v) {
         return Vector2<T2> { static_cast<T2>(n) / v.x, static_cast<T2>(n) / v.y };
     }
-
-    template <typename T>
-    inline T length(Vector2<T> v) {
-        return std::sqrt(std::pow(v.x, 2) + std::pow(v.y, 2));
-    }
-
-    template <typename T>
-    inline Vector2<T> normalize(Vector2<T> v) {
-        double v_len = length(v);
-        return Vector2<T> { v.x / static_cast<T>(v_len), v.y /static_cast<T>(v_len) };
-    }
+    
 };
