@@ -1,7 +1,7 @@
 /**
  * @project: mas-lib
  * @brief Vector Type 2D
- * @version 0.1
+ * @version 0.11
  */
 
 #pragma once
@@ -55,8 +55,28 @@ namespace mas {
     }
 
     template <typename T1, typename T2>
+    inline Vector2<T1> operator+(const Vector2<T1>& v, const T2& n) {
+        return Vector2<T1> { v.x + n, v.y + n };
+    }
+
+    template <typename T1, typename T2>
+    inline Vector2<T2> operator+(const T1& n, const Vector2<T2>& v) {
+        return v + n;
+    }
+
+    template <typename T1, typename T2>
+    inline Vector2<T1> operator-(const Vector2<T1>& v, const T2& n) {
+        return Vector2<T1> { v.x - n, v.y - n };
+    }
+
+    template <typename T1, typename T2>
+    inline Vector2<T2> operator-(const T1& n, const Vector2<T2>& v) {
+        return Vector2<T2> { n - v.x, n - v.y };
+    }
+
+    template <typename T1, typename T2>
     inline Vector2<T1> operator*(const Vector2<T1>& v, const T2& n) {
-        return Vector2<T1> { v.x * static_cast<T1>(n), v.y * static_cast<T1>(n) };
+        return Vector2<T1> { v.x * n, v.y * n };
     }
 
     template <typename T1, typename T2>
@@ -64,14 +84,14 @@ namespace mas {
         return v * n;
     }
 
-    template <typename T>
-    inline Vector2<T> operator/(const Vector2<T>& v, const T& n) {
-        return Vector2<T> { v.x / static_cast<T>(n), v.y / static_cast<T>(n) };
-    }
+    template <typename T1, typename T2>
+    inline Vector2<T1> operator/(const Vector2<T1>& v, const T2& n) {
+        return Vector2<T1> { v.x / n, v.y / n };
+    };
 
-    template <typename T>
-    inline Vector2<T> operator/(const T& n, const Vector2<T>& v) {
-        return Vector2<T> { static_cast<T>(n) / v.x, static_cast<T>(n) / v.y };
-    }
+    template <typename T1, typename T2>
+    inline Vector2<T2> operator/(const T1& n, const Vector2<T2>& v) {
+        return Vector2<T2> { n / v.x, n / v.y };
+    };
 
 };

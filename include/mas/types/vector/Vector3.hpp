@@ -1,7 +1,7 @@
 /**
  * @project: mas-lib (https://github.com/anpydx/mas)
  * @brief Vector Type 3D
- * @version 0.1
+ * @version 0.11
  */
 
 #pragma once
@@ -63,8 +63,28 @@ namespace mas {
     }
 
     template <typename T1, typename T2>
+    inline Vector3<T1> operator+(const Vector3<T1>& v, const T2& n) {
+        return Vector3<T1> { v.x + n, v.y + n, v.z + n };
+    }
+
+    template <typename T1, typename T2>
+    inline Vector3<T2> operator+(const T1& n, const Vector3<T2>& v) {
+        return v + n;
+    }
+
+    template <typename T1, typename T2>
+    inline Vector3<T1> operator-(const Vector3<T1>& v, const T2& n) {
+        return Vector3<T1> { v.x - n, v.y - n, v.z - n };
+    }
+
+    template <typename T1, typename T2>
+    inline Vector3<T2> operator-(const T1& n, const Vector3<T2>& v) {
+        return Vector3<T2> { n - v.x, n - v.y, n - v.z };
+    }
+
+    template <typename T1, typename T2>
     inline Vector3<T1> operator*(const Vector3<T1>& v, const T2& n) {
-        return Vector3<T1> { v.x * static_cast<T1>(n), v.y * static_cast<T1>(n), v.z * static_cast<T1>(n) };
+        return Vector3<T1> { v.x * n, v.y * n, v.z * static_cast<T1>(n) };
     }
 
     template <typename T1, typename T2>
@@ -72,13 +92,13 @@ namespace mas {
         return v * n;
     }
 
-    template <typename T>
-    inline Vector3<T> operator/(const Vector3<T>& v, const T& n) {
-        return Vector3<T> { v.x / static_cast<T>(n), v.y / static_cast<T>(n), v.z / static_cast<T>(n) };
+    template <typename T1, typename T2>
+    inline Vector3<T1> operator/(const Vector3<T1>& v, const T2& n) {
+        return Vector3<T1> { v.x / n, v.y / n, v.z / n };
     }
 
-    template <typename T>
-    inline Vector3<T> operator/(const T& n, const Vector3<T>& v) {
-        return Vector3<T> { static_cast<T>(n) / v.x, static_cast<T>(n) / v.y, static_cast<T>(n) / v.z };
+    template <typename T1, typename T2>
+    inline Vector3<T2> operator/(const T1& n, const Vector3<T2>& v) {
+        return Vector3<T2> { n / v.x, n / v.y, n / v.z };
     }
 }

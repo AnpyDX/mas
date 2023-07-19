@@ -1,5 +1,5 @@
 # Mas-Lib
-`Mas` is a C++ math library for graphics.
+`mas` is a header only C++ math library for graphics.
 
 ## Features
 ### Supported types
@@ -19,4 +19,4 @@
 More details can be found in [Document](Documents.md).
 
 ## License
-Licensed under the *MIT license*, see [LICENSE](LICENSE) for details.
+Licensed under the **MIT license**, see [LICENSE](LICENSE) for details.
