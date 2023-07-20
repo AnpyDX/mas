@@ -15,22 +15,38 @@
 #include "types/vector/Vector4.hpp"
 #include "types/vector/Common.hpp"
 
-/* PreType macro */
+/** @section Matrix Types*/
+#include "types/matrix/Matrix2.hpp"
+#include "types/matrix/Matrix3.hpp"
+#include "types/matrix/Matrix4.hpp"
+#include "types/matrix/Common.hpp"
+
+
+/** @section Reserved Type macro */
 namespace mas {
-#ifdef MAS_PTYPE_INT
+#if defined(MAS_RTYPE_INT)
     using vec2 = Vector2<int>;
     using vec3 = Vector3<int>;
     using vec4 = Vector4<int>;
+    using mat2 = Matrix2<int>;
+    using mat3 = Matrix3<int>;
+    using mat4 = Matrix4<int>;
 
-#elifdef MAS_PTYPE_FLOAT
+#elif defined(MAS_RTYPE_FLOAT)
     using vec2 = Vector2<float>;
     using vec3 = Vector3<float>;
     using vec4 = Vector4<float>;
+    using mat2 = Matrix2<float>;
+    using mat3 = Matrix3<float>;
+    using mat4 = Matrix4<float>;
 
-#elifdef MAS_PTYPE_DOUBLE
+#elif defined(MAS_RTYPE_DOUBLE)
     using vec2 = Vector2<double>;
     using vec3 = Vector3<double>;
     using vec4 = Vector4<double>;
+    using mat2 = Matrix2<double>;
+    using mat3 = Matrix3<double>;
+    using mat4 = Matrix4<double>;
 
 #endif
 }
