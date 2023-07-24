@@ -21,6 +21,8 @@
 #include "types/matrix/Matrix4.hpp"
 #include "types/matrix/Common.hpp"
 
+#include "types/shared_common.hpp"
+
 
 /** @section Reserved Type macro */
 namespace mas {

@@ -12,8 +12,8 @@ namespace mas {
     class Vector4 {
     public:
         Vector4() = default;
-        explicit Vector4(const T& n)
-        : x(n), y(n), z(n), w(n) {}
+        explicit Vector4(const T& scaler)
+        : x(scaler), y(scaler), z(scaler), w(scaler) {}
 
         Vector4(const Vector2<T>& v, const T& z, const T& w)
         : x(v.x), y(v.y), z(z), w(w) {}

@@ -13,8 +13,8 @@ namespace mas {
     class Vector3 {
     public:
         Vector3() = default;
-        explicit Vector3(const T& n)
-        : x(n), y(n), z(n) {}
+        explicit Vector3(const T& scaler)
+        : x(scaler), y(scaler), z(scaler) {}
 
         Vector3(const Vector2<T>& v, const T& z)
         : x(v.x), y(v.y), z(z) {}

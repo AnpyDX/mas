@@ -1,5 +1,5 @@
 /**
- * @project: mas-lib
+ * @project: mas-lib (https://github.com/anpydx/mas)
  * @brief Vector Type 2D
  * @version 0.11
  */
@@ -12,8 +12,8 @@ namespace mas {
     class Vector2 {
     public:
         Vector2() = default;
-        explicit Vector2(const T& n)
-        : x(n), y(n) {}
+        explicit Vector2(const T& scaler)
+        : x(scaler), y(scaler) {}
 
         Vector2(const T& x, const T& y)
         : x(x), y(y) {}
