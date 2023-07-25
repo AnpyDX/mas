@@ -1,7 +1,7 @@
 /**
  * @project: mas-lib (https://github.com/anpydx/mas)
- * @brief Shared Common Functions
- * @version 0.1
+ * @brief Shared Common Functions (Types)
+ * @version 0.11
  */
 
 #pragma once

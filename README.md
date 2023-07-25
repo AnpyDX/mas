@@ -1,17 +1,17 @@
 # Mas-Lib
-`mas` is a header only C++ math library for graphics.
+`mas` is a lightweight, header only C++ math library for graphics.
 
 ## Features
 ### Supported types
-- `Vector2` => (x, y)
-- `Vector3` => (x, y, z)
-- `Vector4` => (x, y, z, w)
-- `Martix2` => (2 x 2)
-- `Martix3` => (3 x 3)
-- `Martix4` => (4 x 4)
+- `Vector2` -> vec2(x, y)
+- `Vector3` -> vec3(x, y, z)
+- `Vector4` -> vec4(x, y, z, w)
+- `Martix2` -> mat2(2 x 2)
+- `Martix3` -> mat3(3 x 3)
+- `Martix4` -> mat4(4 x 4)
 
-### Provided Transform
-- Transform
+### Supported Transformation
+- Translation
 - Rotation
 - Projection
 

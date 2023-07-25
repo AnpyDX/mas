@@ -9,20 +9,9 @@
 
 #pragma once
 
-/** @section Vector Types */
-#include "types/vector/Vector2.hpp"
-#include "types/vector/Vector3.hpp"
-#include "types/vector/Vector4.hpp"
-#include "types/vector/Common.hpp"
 
-/** @section Matrix Types*/
-#include "types/matrix/Matrix2.hpp"
-#include "types/matrix/Matrix3.hpp"
-#include "types/matrix/Matrix4.hpp"
-#include "types/matrix/Common.hpp"
-
+/** @section Types Including  */
 #include "types/shared_common.hpp"
-
 
 /** @section Reserved Type macro */
 namespace mas {
@@ -52,3 +41,6 @@ namespace mas {
 
 #endif
 }
+
+/** @section Utils Including */
+#include "utils/common.hpp"

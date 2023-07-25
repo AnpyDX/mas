@@ -13,7 +13,7 @@ namespace mas {
     public:
         Matrix2() = default;
         explicit Matrix2(const T& scaler) {
-            Matrix2(
+            *this = Matrix2(
                 scaler, 0,
                 0, scaler
             );
