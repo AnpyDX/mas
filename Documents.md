@@ -73,9 +73,9 @@ Notice: All types and function are included in the namespace `mas`.
 - matrix3 <T\> (3x3)
 - matrix4 <T\> (4x4)
 
-What's more, **mas-lib** provide `pre-types` for you to use these basic types more easily. Using `pre-types` to avoid unnecessary types conversion.
+What's more, **mas-lib** provide `pre-defined types` for you to use these basic types more easily. Using them to avoid unnecessary types conversion.
 
-You can enable `pre-types` by defining `MAS_PTYPE_` macro, **mas-lib** offers three `pre-types`.
+**mas-lib** offers three `PTypes`, you can enable `pre-defined types` by defining `MAS_PTYPE_` macro.
 ```cpp
 #define MAS_PTYPE_INT // T = int | e.g. vec3 = Vector3<int>
 #define MAS_PTYPE_FLOAT // T = float

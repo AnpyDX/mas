@@ -9,7 +9,7 @@
 
 namespace mas {
     /**
-     * @brief transform degress to radians
+     * @brief convert degress to radians
      * @param degress
      */
     template <typename T>
@@ -18,11 +18,11 @@ namespace mas {
     }
 
     /**
-     * @brief transform radians to degress
+     * @brief convert radians to degrees
      * @param radians
      */
     template <typename T>
-    inline T degress(const T& radians) {
+    inline T degrees(const T& radians) {
         return static_cast<T>((radians / PI) * 180.0);
     }
 }

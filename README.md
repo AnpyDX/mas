@@ -16,7 +16,7 @@
 - Projection
 
 ## Documents
-More details can be found in [Document](Documents.md).
+More details can be found in [Documents](Documents.md).
 
 ## License
 Licensed under the **MIT license**, see [LICENSE](LICENSE) for details.
