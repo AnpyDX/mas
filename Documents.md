@@ -139,7 +139,7 @@ auto v = mas::Vector4<int>(1, 2, 3, 4);
 ```
 
 $$
-\bar{v} = \begin{pmatrix} 1 \\ 2 \\ 3 \\ 4 \end{pmatrix}
+\bar{v} = \begin{pmatrix} 1\\ 2\\ 3\\ 4 \end{pmatrix}
 $$
 
 **memory layout**
@@ -163,7 +163,7 @@ auto m = mas::mat3<int> {
 ```
 
 $$
-M = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}\quad
+M = \begin{bmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{bmatrix}\quad
 $$
 
 **memory layout**
