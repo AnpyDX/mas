@@ -13,9 +13,9 @@
 /** @section Types Including  */
 #include "types/shared_common.hpp"
 
-/** @section Reserved Type macro */
+/** @section Pre-defined Type macro */
 namespace mas {
-#if defined(MAS_RTYPE_INT)
+#if defined(MAS_PTYPE_INT)
     using vec2 = Vector2<int>;
     using vec3 = Vector3<int>;
     using vec4 = Vector4<int>;
@@ -23,7 +23,7 @@ namespace mas {
     using mat3 = Matrix3<int>;
     using mat4 = Matrix4<int>;
 
-#elif defined(MAS_RTYPE_FLOAT)
+#elif defined(MAS_PTYPE_FLOAT)
     using vec2 = Vector2<float>;
     using vec3 = Vector3<float>;
     using vec4 = Vector4<float>;
@@ -31,7 +31,7 @@ namespace mas {
     using mat3 = Matrix3<float>;
     using mat4 = Matrix4<float>;
 
-#elif defined(MAS_RTYPE_DOUBLE)
+#elif defined(MAS_PTYPE_DOUBLE)
     using vec2 = Vector2<double>;
     using vec3 = Vector3<double>;
     using vec4 = Vector4<double>;
