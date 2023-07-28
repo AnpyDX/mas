@@ -11,7 +11,11 @@ namespace mas {
     template <typename T>
     class Matrix2 {
     public:
-        Matrix2() = default;
+        Matrix2() {
+            m_value[0][0] = m_value[0][1] = \
+            m_value[1][0] = m_value[1][1] = 0;
+        }
+
         explicit Matrix2(const T& scaler) {
             *this = Matrix2(
                 scaler, 0,

@@ -12,7 +12,9 @@ namespace mas {
     template <typename T>
     class Vector3 {
     public:
-        Vector3() = default;
+        Vector3()
+        :x(0), y(0), z(0) {}
+
         explicit Vector3(const T& scaler)
         : x(scaler), y(scaler), z(scaler) {}
 

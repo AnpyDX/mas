@@ -60,7 +60,7 @@ int main() {
 Notice: All types and function are included in the namespace `mas`.
 
 ### Types
-#### provided types
+#### supported types
 **mas-lib** provides `vector` and `matrix` types.
 
 **Vector**
@@ -73,6 +73,7 @@ Notice: All types and function are included in the namespace `mas`.
 - matrix3 <T\> (3x3)
 - matrix4 <T\> (4x4)
 
+#### pre-defined types
 What's more, **mas-lib** provide `pre-defined types` for you to use these basic types more easily. Using them to avoid unnecessary types conversion.
 
 **mas-lib** offers three `PTypes`, you can enable `pre-defined types` by defining `MAS_PTYPE_` macro.
@@ -91,7 +92,7 @@ Now, you can use `vector` and `matrix` more easily:
 - mat3 = Matrix3
 - mat4 = Matrix4
 
-#### supported operators
+#### spported operators
 **Vector**
 ```ts
 NOTICE: vec = vector , num = number
@@ -151,7 +152,7 @@ $$
 
 **matrix**
 
-All matrix types in **mas-lib** are stored in memory in *column-major order*.
+All matrix types in **mas-lib** are stored in memory in *row-major order*. In some graphics APIs like OpenGL and Vulkan, which expect the input matrices to be laid out in column-major order, you need to use the function `mas::transpose` to transpose matrices before inputting them.
 
 **definition**
 ```cpp

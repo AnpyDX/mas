@@ -10,7 +10,12 @@ namespace mas {
     template <typename T>
     class Matrix3 {
     public:
-        Matrix3() = default;
+        Matrix3() {
+            m_value[0][0] = m_value[0][1] = m_value[0][2] = \
+            m_value[1][0] = m_value[1][1] = m_value[1][2] = \
+            m_value[2][0] = m_value[2][1] = m_value[2][2] = 0;
+        }
+
         explicit Matrix3(const T& scaler) {
             *this = Matrix3(
                 scaler, 0, 0,

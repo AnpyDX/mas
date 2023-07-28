@@ -11,7 +11,9 @@ namespace mas {
     template <typename T>
     class Vector4 {
     public:
-        Vector4() = default;
+        Vector4()
+        :x(0), y(0), z(0), w(0) {}
+
         explicit Vector4(const T& scaler)
         : x(scaler), y(scaler), z(scaler), w(scaler) {}
 
