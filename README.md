@@ -14,7 +14,7 @@
 - MVP Transformation
 
 ## Documents
-More details can be found in [Documents](Documents.md).
+More details can be found in [Documents](doc/Documents.md).
 
 ## License
 Licensed under the **MIT license**, see [LICENSE](LICENSE) for details.

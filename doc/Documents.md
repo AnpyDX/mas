@@ -139,13 +139,13 @@ TODO
 auto v = mas::Vector4<int>(1, 2, 3, 4);
 ```
 
-$$
+$
 \bar{v} = \begin{pmatrix} 1\\ 2\\ 3\\ 4 \end{pmatrix}
-$$
+$
 
 **memory layout**
 
-![vec-layout](doc-assets/vec-layout.svg)
+![vec-layout](assets/vec-layout.svg)
 
 
 ### Matrix Types
@@ -163,10 +163,10 @@ auto m = mas::mat3<int> {
 };
 ```
 
-$$
+$
 M = \begin{bmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{bmatrix}\quad
-$$
+$
 
 **memory layout**
 
-![matrix-layout](doc-assets/mat-layout.svg)
+![matrix-layout](assets/mat-layout.svg)
