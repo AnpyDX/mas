@@ -1,5 +1,5 @@
 # Mas-Lib
-`mas` is a lightweight, header only C++ math library for graphics.
+`mas` is a lightweight, header only C++ linear math library for graphics development.
 
 ## Features
 ### Supported Types
@@ -12,19 +12,16 @@
 
 ### Supported Transformation
 **Model**
-- Translate
-- Rotate
-- Scale
+- `translate` | `rotate` | `scale`
 
 **View**
-- LookAt
+- `lookAt`
 
 **Porjection**
-- Prepretive
-- Ortho
+- `prepretive` | `ortho`
 
 ## Documents
 More details can be found in [Documents](doc/Documents.md).
 
 ## License
-Licensed under the **MIT license**, see [LICENSE](LICENSE) for details.
+Licensed under the **MIT license**, read [LICENSE](LICENSE) for details.

@@ -37,19 +37,19 @@ namespace mas {
         T one_cos_a = static_cast<T>(1 - std::cos(angle));
 
         return m * Matrix4<T>{
-            cos_a + std::pow(v.x, 2) * one_cos_a,
+            cos_a + static_cast<T>(std::pow(v.x, 2)) * one_cos_a,
             v.x * v.y * one_cos_a - v.z * sin_a,
             v.x * v.z * one_cos_a + v.y * sin_a,
             0,
 
             v.y * v.x * one_cos_a + v.z * sin_a,
-            cos_a + std::pow(v.y, 2) * one_cos_a,
+            cos_a + static_cast<T>(std::pow(v.y, 2)) * one_cos_a,
             v.y * v.z * one_cos_a - v.x * sin_a,
             0,
 
             v.z * v.x * one_cos_a - v.y * sin_a,
             v.z * v.y * one_cos_a + v.x * sin_a,
-            cos_a * std::pow(v.z, 2) * one_cos_a,
+            cos_a * static_cast<T>(std::pow(v.z, 2)) * one_cos_a,
             0,
 
             0, 0, 0, 1
