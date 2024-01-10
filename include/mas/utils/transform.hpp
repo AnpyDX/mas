@@ -1,6 +1,6 @@
 /**
  * @project: mas-lib (https://github.com/anpydx/mas)
- * @brief Utils.Transform: Transform Utils
+ * @brief Utils.Transform: Transform Matrix Genearator Utils
  * @version 0.11
  */
 
