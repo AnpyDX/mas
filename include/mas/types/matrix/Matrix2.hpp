@@ -35,11 +35,11 @@ namespace mas {
         }
 
         /**
-         * @brief Get Matrix Copy
-         * @return Matrix2<T>
+         * @brief Get matrix's data memory pointer
+         * @return T* 
          */
-        Matrix2<T> get() const {
-            return *this;
+        T* get_ptr() {
+            return m_value[0];
         }
 
     private:
