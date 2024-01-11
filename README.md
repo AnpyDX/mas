@@ -21,7 +21,7 @@
 - `prepretive` | `ortho`
 
 ## Documentation
-More details can be found in [Documentation](doc/Documents.md).
+More details can be found in [Documentation](docs/documentation.md).
 
 ## License
 Licensed under the **MIT license**, read [LICENSE](LICENSE) for details.
