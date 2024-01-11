@@ -6,7 +6,6 @@
 
 #pragma once
 #include "../types/shared_common.hpp"
-#include <cmath>
 
 namespace mas {
     /**
