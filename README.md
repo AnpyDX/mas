@@ -20,8 +20,8 @@
 **Porjection**
 - `prepretive` | `ortho`
 
-## Documents
-More details can be found in [Documents](doc/Documents.md).
+## Documentation
+More details can be found in [Documentation](doc/Documents.md).
 
 ## License
 Licensed under the **MIT license**, read [LICENSE](LICENSE) for details.

@@ -1,4 +1,4 @@
-# Mas-Lib Doc
+# MasLib Documentation
 ## Introduction
 `mas-lib` is a lightweight, header only C++ linear math library for graphics development, which provides basic types and utility functions for CG development.
 
@@ -76,9 +76,12 @@ Besides, **mas-lib** provide `pre-defined types` for you to use these basic type
 
 **mas-lib** offers three kinds of `pre-defined types`, and you can enable them by defining `MAS_PTYPE_` macro before including `mas/mas.hpp`.
 ```cpp
-#define MAS_PTYPE_INT // T = int | aka "using vec3 = Vector3<int>"
-#define MAS_PTYPE_FLOAT // T = float
-#define MAS_PTYPE_DOUBLE // T = double
+/* T = int (aka "using vec3 = Vector3<int>") */
+#define MAS_PTYPE_INT
+/* T = float */
+#define MAS_PTYPE_FLOAT
+/* T = double */
+#define MAS_PTYPE_DOUBLE
 ```
 
 Now, you can use them simply by using following name:
@@ -156,7 +159,7 @@ All matrix types in **mas-lib** are stored in memory in *row-major order*. In so
 
 **code format**
 ```cpp
-auto m = mas::mat3<int> {
+auto m = mas::Matrix3<int> {
     1, 2, 3,
     4, 5, 6,
     7, 8, 9
