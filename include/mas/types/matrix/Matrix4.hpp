@@ -91,7 +91,7 @@ namespace mas {
     };
 
     template<typename T>
-    Matrix4<T> operator+(const Matrix4<T> &m1, const Matrix4<T> &m2) {
+    inline Matrix4<T> operator+(Matrix4<T> &m1, Matrix4<T> &m2) {
         return Matrix4<T>{
             m1[0][0] + m2[0][0], m1[1][0] + m2[1][0], m1[2][0] + m2[2][0], m1[3][0] + m2[3][0],
             m1[0][1] + m2[0][1], m1[1][1] + m2[1][1], m1[2][1] + m2[2][1], m1[3][1] + m2[3][1],
@@ -101,7 +101,7 @@ namespace mas {
     }
 
     template<typename T>
-    Matrix4<T> operator-(const Matrix4<T> &m1, const Matrix4<T> &m2) {
+    inline Matrix4<T> operator-(Matrix4<T> &m1, Matrix4<T> &m2) {
         return Matrix4<T>{
             m1[0][0] - m2[0][0], m1[1][0] - m2[1][0], m1[2][0] - m2[2][0], m1[3][0] - m2[3][0],
             m1[0][1] - m2[0][1], m1[1][1] - m2[1][1], m1[2][1] - m2[2][1], m1[3][1] - m2[3][1],
@@ -110,13 +110,33 @@ namespace mas {
         };
     }
 
-    template<typename T> // TODO
-    Matrix4<T> operator*(const Matrix4<T> &m1, const Matrix4<T> &m2) {
-        return Matrix4<T>{};
+    template<typename T>
+    inline Matrix4<T> operator*(Matrix4<T> &m1, Matrix4<T> &m2) {
+        return Matrix4<T>{
+            m1[0][0] * m2[0][0] + m1[1][0] * m2[0][1] + m1[2][0] * m2[0][2] + m1[3][0] * m2[0][3],
+            m1[0][0] * m2[1][0] + m1[1][0] * m2[1][1] + m1[2][0] * m2[1][2] + m1[3][0] * m2[1][3],
+            m1[0][0] * m2[2][0] + m1[1][0] * m2[2][1] + m1[2][0] * m2[2][2] + m1[3][0] * m2[2][3],
+            m1[0][0] * m2[3][0] + m1[1][0] * m2[3][1] + m1[2][0] * m2[3][2] + m1[3][0] * m2[3][3],
+
+            m1[0][1] * m2[0][0] + m1[1][1] * m2[0][1] + m1[2][1] * m2[0][2] + m1[3][1] * m2[0][3],
+            m1[0][1] * m2[1][0] + m1[1][1] * m2[1][1] + m1[2][1] * m2[1][2] + m1[3][1] * m2[1][3],
+            m1[0][1] * m2[2][0] + m1[1][1] * m2[2][1] + m1[2][1] * m2[2][2] + m1[3][1] * m2[2][3],
+            m1[0][1] * m2[3][0] + m1[1][1] * m2[3][1] + m1[2][1] * m2[3][2] + m1[3][1] * m2[3][3],
+
+            m1[0][2] * m2[0][0] + m1[1][2] * m2[0][1] + m1[2][2] * m2[0][2] + m1[3][2] * m2[0][3],
+            m1[0][2] * m2[1][0] + m1[1][2] * m2[1][1] + m1[2][2] * m2[1][2] + m1[3][2] * m2[1][3],
+            m1[0][2] * m2[2][0] + m1[1][2] * m2[2][1] + m1[2][2] * m2[2][2] + m1[3][2] * m2[2][3],
+            m1[0][2] * m2[3][0] + m1[1][2] * m2[3][1] + m1[2][2] * m2[3][2] + m1[3][2] * m2[3][3],
+
+            m1[0][3] * m2[0][0] + m1[1][3] * m2[0][1] + m1[2][3] * m2[0][2] + m1[3][3] * m2[0][3],
+            m1[0][3] * m2[1][0] + m1[1][3] * m2[1][1] + m1[2][3] * m2[1][2] + m1[3][3] * m2[1][3],
+            m1[0][3] * m2[2][0] + m1[1][3] * m2[2][1] + m1[2][3] * m2[2][2] + m1[3][3] * m2[2][3],
+            m1[0][3] * m2[3][0] + m1[1][3] * m2[3][1] + m1[2][3] * m2[3][2] + m1[3][3] * m2[3][3]
+        };
     }
 
     template<typename T, typename U>
-    Matrix4<T> operator+(const Matrix4<T> &m, const U &n) {
+    inline Matrix4<T> operator+(Matrix4<T> &m, U &n) {
         return Matrix4<T>{
             m[0][0] + n, m[1][0] + n, m[2][0] + n, m[3][0] + n,
             m[0][1] + n, m[1][1] + n, m[2][1] + n, m[3][1] + n,
@@ -126,12 +146,12 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    Matrix4<U> operator+(const T &n, const Matrix4<U> &m) {
+    inline Matrix4<U> operator+(T &n, Matrix4<U> &m) {
         return m + n;
     }
 
     template<typename T, typename U>
-    Matrix4<T> operator-(const Matrix4<T> &m, const U &n) {
+    inline Matrix4<T> operator-(Matrix4<T> &m, U &n) {
         return Matrix4<T>{
             m[0][0] - n, m[1][0] - n, m[2][0] - n, m[3][0] - n,
             m[0][1] - n, m[1][1] - n, m[2][1] - n, m[3][1] - n,
@@ -141,7 +161,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    Matrix4<U> operator-(const T &n, const Matrix4<U> &m) {
+    inline Matrix4<U> operator-(T &n, Matrix4<U> &m) {
         return Matrix4<U>{
             n - m[0][0], n - m[1][0], n - m[2][0], n - m[3][0],
             n - m[0][1], n - m[1][1], n - m[2][1], n - m[3][1],
@@ -151,7 +171,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    Matrix4<T> operator*(const Matrix4<T> &m, const U &n) {
+    inline Matrix4<T> operator*(Matrix4<T> &m, U &n) {
         return Matrix4<T>{
             m[0][0] * n, m[1][0] * n, m[2][0] * n, m[3][0] * n,
             m[0][1] * n, m[1][1] * n, m[2][1] * n, m[3][1] * n,
@@ -161,12 +181,12 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    Matrix4<U> operator*(const T &n, const U &m) {
+    inline Matrix4<U> operator*(T &n, Matrix4<U> &m) {
         return m * n;
     }
 
     template<typename T, typename U>
-    Matrix4<T> operator/(const Matrix4<T> &m, const U &n) {
+    inline Matrix4<T> operator/(Matrix4<T> &m, U &n) {
         return Matrix4<T>{
             m[0][0] / n, m[1][0] / n, m[2][0] / n, m[3][0] / n,
             m[0][1] / n, m[1][1] / n, m[2][1] / n, m[3][1] / n,
@@ -176,7 +196,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    Matrix4<U> operator/(const T &n, const Matrix4<U> &m) {
+    inline Matrix4<U> operator/(T &n, Matrix4<U> &m) {
         return Matrix4<U>{
             n / m[0][0], n / m[1][0], n / m[2][0], n / m[3][0],
             n / m[0][1], n / m[1][1], n / m[2][1], n / m[3][1],

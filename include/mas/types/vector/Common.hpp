@@ -305,6 +305,4 @@ namespace mas {
     inline Vector4<T> normalize(const Vector4<T> &v) {
         return v / static_cast<T>(length(v));
     }
-
-
 }

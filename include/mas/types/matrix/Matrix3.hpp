@@ -73,7 +73,7 @@ namespace mas {
     };
 
     template<typename T>
-    inline Matrix3<T> operator+(const Matrix3<T> &m1, const Matrix3<T> &m2) {
+    inline Matrix3<T> operator+(Matrix3<T> &m1, Matrix3<T> &m2) {
         return Matrix3<T>{
             m1[0][0] + m2[0][0], m1[1][0] + m2[1][0], m1[2][0] + m2[2][0],
             m1[0][1] + m2[0][1], m1[1][1] + m2[1][1], m1[2][1] + m2[2][1],
@@ -82,7 +82,7 @@ namespace mas {
     }
 
     template<typename T>
-    inline Matrix3<T> operator-(const Matrix3<T> &m1, const Matrix3<T> &m2) {
+    inline Matrix3<T> operator-(Matrix3<T> &m1, Matrix3<T> &m2) {
         return Matrix3<T>{
             m1[0][0] - m2[0][0], m1[1][0] - m2[1][0], m1[2][0] - m2[2][0],
             m1[0][1] - m2[0][1], m1[1][1] - m2[1][1], m1[2][1] - m2[2][1],
@@ -90,15 +90,25 @@ namespace mas {
         };
     }
 
-    template<typename T> // TODO
-    inline Matrix3<T> operator*(const Matrix3<T> &m1, const Matrix3<T> &m2) {
+    template<typename T>
+    inline Matrix3<T> operator*(Matrix3<T> &m1, Matrix3<T> &m2) {
         return Matrix3<T>{
+            m1[0][0] * m2[0][0] + m1[1][0] * m2[0][1] + m1[2][0] * m2[0][2],
+            m1[0][0] * m2[1][0] + m1[1][0] * m2[1][1] + m1[2][0] * m2[1][2],
+            m1[0][0] * m2[2][0] + m1[1][0] * m2[2][1] + m1[2][0] * m2[2][2],
 
+            m1[0][1] * m2[0][0] + m1[1][1] * m2[0][1] + m1[2][1] * m2[0][2],
+            m1[0][1] * m2[1][0] + m1[1][1] * m2[1][1] + m1[2][1] * m2[1][2],
+            m1[0][1] * m2[2][0] + m1[1][1] * m2[2][1] + m1[2][1] * m2[2][2],
+
+            m1[0][2] * m2[0][0] + m1[1][2] * m2[0][1] + m1[2][2] * m2[0][2],
+            m1[0][2] * m2[1][0] + m1[1][2] * m2[1][1] + m1[2][2] * m2[1][2],
+            m1[0][2] * m2[2][0] + m1[1][2] * m2[2][1] + m1[2][2] * m2[2][2]
         };
     }
 
     template<typename T, typename U>
-    inline Matrix3<T> operator+(const Matrix3<T> &m, const U &n) {
+    inline Matrix3<T> operator+(Matrix3<T> &m, U &n) {
         return Matrix3<T>{
             m[0][0] + n, m[1][0] + n, m[2][0] + n,
             m[0][1] + n, m[1][1] + n, m[2][1] + n,
@@ -107,12 +117,12 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix3<T> operator+(const T &n, const Matrix3<U> &m) {
+    inline Matrix3<T> operator+(T &n, Matrix3<U> &m) {
         return m + n;
     }
 
     template<typename T, typename U>
-    inline Matrix3<T> operator-(const Matrix3<T> &m, const U &n) {
+    inline Matrix3<T> operator-(Matrix3<T> &m, U &n) {
         return Matrix3<T>{
             m[0][0] - n, m[1][0] - n, m[2][0] - n,
             m[0][1] - n, m[1][1] - n, m[2][1] - n,
@@ -121,7 +131,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix3<U> operator-(const T &n, const Matrix3<U> &m) {
+    inline Matrix3<U> operator-(T &n, Matrix3<U> &m) {
         return Matrix3<U>{
             n - m[0][0], n - m[1][0], n - m[2][0],
             n - m[0][1], n - m[1][1], n - m[2][1],
@@ -130,7 +140,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix3<T> operator*(const Matrix3<T> &m, const U &n) {
+    inline Matrix3<T> operator*(Matrix3<T> &m, U &n) {
         return Matrix3<T>{
             m[0][0] * n, m[1][0] * n, m[2][0] * n,
             m[0][1] * n, m[1][1] * n, m[2][1] * n,
@@ -139,12 +149,12 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix3<U> operator*(const T &n, const Matrix3<U> &m) {
+    inline Matrix3<U> operator*(T &n, Matrix3<U> &m) {
         return m * n;
     }
 
     template<typename T, typename U>
-    inline Matrix3<T> operator/(const Matrix3<T> &m, const U &n) {
+    inline Matrix3<T> operator/(Matrix3<T> &m, U &n) {
         return Matrix3<T>{
             m[0][0] / n, m[1][0] / n, m[2][0] / n,
             m[0][1] / n, m[1][1] / n, m[2][1] / n,
@@ -153,7 +163,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix3<U> operator/(const T &n, const Matrix3<U> &m) {
+    inline Matrix3<U> operator/(T &n, Matrix3<U> &m) {
         return Matrix3<U>{
             n / m[0][0], n / m[1][0], n / m[2][0],
             n / m[0][1], n / m[1][1], n / m[2][1],

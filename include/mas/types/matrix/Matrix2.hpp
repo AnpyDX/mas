@@ -59,7 +59,7 @@ namespace mas {
     };
 
     template<typename T>
-    inline Matrix2<T> operator+(const Matrix2<T> &m1, const Matrix2<T> &m2) {
+    inline Matrix2<T> operator+(Matrix2<T> &m1, Matrix2<T> &m2) {
         return Matrix2<T>{
             m1[0][0] + m2[0][0],
             m1[1][0] + m2[1][0],
@@ -69,7 +69,7 @@ namespace mas {
     }
 
     template<typename T>
-    inline Matrix2<T> operator-(const Matrix2<T> &m1, const Matrix2<T> &m2) {
+    inline Matrix2<T> operator-(Matrix2<T> &m1, Matrix2<T> &m2) {
         return Matrix2<T>{
             m1[0][0] - m2[0][0],
             m1[1][0] - m2[1][0],
@@ -79,7 +79,7 @@ namespace mas {
     }
 
     template<typename T>
-    inline Matrix2<T> operator*(const Matrix2<T> &m1, const Matrix2<T> &m2) {
+    inline Matrix2<T> operator*(Matrix2<T> &m1, Matrix2<T> &m2) {
         return Matrix2<T>{
             m1[0][0] * m2[0][0] + m1[1][0] * m2[0][1],
             m1[0][0] * m2[1][0] + m1[1][0] * m2[1][1],
@@ -89,7 +89,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix2<T> operator+(const Matrix2<T> &m, const U &n) {
+    inline Matrix2<T> operator+(Matrix2<T> &m, U &n) {
         return Matrix2<T>{
             m[0][0] + n,
             m[1][0] + n,
@@ -99,12 +99,12 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix2<U> operator+(const T &n, const Matrix2<U> &m) {
+    inline Matrix2<U> operator+(T &n, Matrix2<U> &m) {
         return m + n;
     }
 
     template<typename T, typename U>
-    inline Matrix2<T> operator-(const Matrix2<T> &m, const U &n) {
+    inline Matrix2<T> operator-(Matrix2<T> &m, U &n) {
         return Matrix2<T>{
             m[0][0] - n,
             m[1][0] - n,
@@ -114,7 +114,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix2<U> operator-(const T &n, const Matrix2<U> &m) {
+    inline Matrix2<U> operator-(T &n, Matrix2<U> &m) {
         return Matrix2<U>{
             n - m[0][0],
             n - m[1][0],
@@ -124,7 +124,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix2<T> operator*(const Matrix2<T> &m, const U &n) {
+    inline Matrix2<T> operator*(Matrix2<T> &m, U &n) {
         return Matrix2<T>{
             m[0][0] * n,
             m[1][0] * n,
@@ -134,12 +134,12 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix2<U> operator*(const T &n, const Matrix2<U> &m) {
+    inline Matrix2<U> operator*(T &n, Matrix2<U> &m) {
         return m * n;
     }
 
     template<typename T, typename U>
-    inline Matrix2<T> operator/(const Matrix2<T> &m, const U &n) {
+    inline Matrix2<T> operator/(Matrix2<T> &m, U &n) {
         return Matrix2<T>{
             m[0][0] / n,
             m[1][0] / n,
@@ -149,7 +149,7 @@ namespace mas {
     }
 
     template<typename T, typename U>
-    inline Matrix2<U> operator/(const T &n, const Matrix2<U> &m) {
+    inline Matrix2<U> operator/(T &n, Matrix2<U> &m) {
         return Matrix2<U>{
             n / m[0][0],
             n / m[1][0],
