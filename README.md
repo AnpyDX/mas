@@ -19,7 +19,7 @@
 - `projection`
 
 ## Documentation
-More usage and details **mas** can be found in [documentation]().
+More usage and details **mas** can be found in [documentation](doc/documentation.md).
 
 ## License
 Licensed under the **MIT license**, read [LICENSE](LICENSE) for details.
