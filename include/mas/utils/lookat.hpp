@@ -1,12 +1,14 @@
 /**
- * @project: mas-lib (https://github.com/anpydx/mas)
- * @brief Utils.LookAt: LookAt Matrix Genearator Utils
- * @version 0.11
- */
+* mas-lib (https://github.com/anpydx/mas)
+*    a lightweight linear math library
+* @copyright Copyright (c) 2023-2024 anpyd, All Rights Reserved.
+*
+* @version: 2.0
+* @brief: lookAt matrix generator utils
+*/
 
 #pragma once
 #include "../types/shared_common.hpp"
-
 
 namespace mas {
 
@@ -27,9 +29,9 @@ namespace mas {
             dir.x,   dir.y,   dir.z,   0,
             0, 0, 0, 1
         };
-        result[0][3] = -right.x * pos.x - right.y * pos.y - right.z * pos.z;
-        result[1][3] = -up.x * pos.x - up.y * pos.y - up.z * pos.z;
-        result[2][3] = -dir.x * pos.x - dir.y * pos.y - dir.z * pos.z;
+        result[3][0] = -right.x * pos.x - right.y * pos.y - right.z * pos.z;
+        result[3][1] = -up.x * pos.x - up.y * pos.y - up.z * pos.z;
+        result[3][2] = -dir.x * pos.x - dir.y * pos.y - dir.z * pos.z;
 
         return result;
     }

@@ -1,6 +1,5 @@
-.cache/
-build/
-test.cpp
-test_utils.h
+﻿.idea/
+cmake-build-debug/
+test/
 CMakeLists.txt
 TODO

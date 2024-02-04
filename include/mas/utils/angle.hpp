@@ -1,10 +1,14 @@
 /**
- * @project: mas-lib (https://github.com/anpydx/mas)
- * @brief Utils.Angle: Angle Utils
- * @version 0.11
- */
+* mas-lib (https://github.com/anpydx/mas)
+*    a lightweight linear math library
+* @copyright Copyright (c) 2023-2024 anpyd, All Rights Reserved.
+*
+* @version: 2.0
+* @brief: angle convert utility
+*/
 
 #pragma once
+
 #include "constants.hpp"
 
 namespace mas {

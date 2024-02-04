@@ -1,8 +1,11 @@
 /**
- * @project: mas-lib (https://github.com/anpydx/mas)
- * @brief Utils.Transform: Transform Matrix Genearator Utils
- * @version 0.11
- */
+* mas-lib (https://github.com/anpydx/mas)
+*    a lightweight linear math library
+* @copyright Copyright (c) 2023-2024 anpyd, All Rights Reserved.
+*
+* @version: 2.0
+* @brief: transform matrix generator utils
+*/
 
 #pragma once
 #include "../types/shared_common.hpp"
@@ -12,22 +15,22 @@ namespace mas {
      * @brief generate a translate matrix
      * @param m previous matrix
      * @param v movement factor
-     * @return Matrix4<T> 
+     * @return Matrix4<T>
      */
     template <typename T>
     inline Matrix4<T> translate(Matrix4<T> m, const Vector3<T>& v) {
-        m[0][3] += v.x;
-        m[1][3] += v.y;
-        m[2][3] += v.z;
+        m[3][0] += v.x;
+        m[3][1] += v.y;
+        m[3][2] += v.z;
         return m;
     }
 
     /**
-     * @brief generate a rotate matrix 
+     * @brief generate a rotate matrix
      * @param m previous matrix
      * @param v rotation axis
      * @param angle rotate angle
-     * @return Matrix4<T> 
+     * @return Matrix4<T>
      */
     template <typename T>
     inline Matrix4<T> rotate(Matrix4<T> m, const Vector3<T>& v, double angle) {
@@ -59,7 +62,7 @@ namespace mas {
      * @brief generate a scaling matrix
      * @param m previous matrix
      * @param v scaling factor
-     * @return Matrix4<T> 
+     * @return Matrix4<T>
      */
     template <typename T>
     inline Matrix4<T> scale(Matrix4<T> m, const Vector3<T>& v) {
