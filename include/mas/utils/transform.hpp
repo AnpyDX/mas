@@ -36,26 +36,23 @@ namespace mas {
     inline Matrix4<T> rotate(Matrix4<T> m, const Vector3<T>& v, double angle) {
         T sin_a = static_cast<T>(std::sin(angle));
         T cos_a = static_cast<T>(std::cos(angle));
-        T one_cos_a = static_cast<T>(1 - std::cos(angle));
+        Vector3<T> axis = normalize(v);
+        Vector3<T> temp = (static_cast<T>(1) - cos_a) * axis;
 
-        return m * Matrix4<T>{
-            cos_a + v.x * v.x * one_cos_a,
-            v.x * v.y * one_cos_a - v.z * sin_a,
-            v.x * v.z * one_cos_a + v.y * sin_a,
-            0,
+        Matrix4<T> result(1.0);
+        result[0][0] = cos_a + temp.x * axis.x;
+        result[0][1] = temp.x * axis.y + sin_a * axis.z;
+        result[0][2] = temp.x * axis.z - sin_a * axis.y;
 
-            v.y * v.x * one_cos_a + v.z * sin_a,
-            cos_a + v.y * v.y * one_cos_a,
-            v.y * v.z * one_cos_a - v.x * sin_a,
-            0,
+        result[1][0] = temp.y * axis.x - sin_a * axis.z;
+        result[1][1] = cos_a + temp.y * axis.y;
+        result[1][2] = temp.y * axis.z + sin_a * axis.x;
 
-            v.z * v.x * one_cos_a - v.y * sin_a,
-            v.z * v.y * one_cos_a + v.x * sin_a,
-            cos_a * v.z * v.z * one_cos_a,
-            0,
+        result[2][0] = temp.z * axis.x + sin_a * axis.y;
+        result[2][1] = temp.z * axis.y - sin_a * axis.x;
+        result[2][2] = cos_a + temp.z * axis.z;
 
-            0, 0, 0, 1
-        };
+        return m * result;
     }
 
     /**
