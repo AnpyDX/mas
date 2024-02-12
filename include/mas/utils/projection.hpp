@@ -14,7 +14,7 @@
 
 namespace mas {
     /**
-     * @brief generate a perspective matrix
+     * @brief generate a perspective projection matrix
      * @param fov fov of view
      * @param aspect aspect of viewport (width / height)
      * @param near near plane
@@ -23,13 +23,30 @@ namespace mas {
      */
     template <typename T>
     inline Matrix4<T> perspective(T fov, T aspect, T near, T far) {
-        float tanHalFov = tan(fov/ static_cast<float>(2));
+        float tanHalFov = tan(fov/ static_cast<T>(2));
         Matrix4<T> res(0.0);
-        res[0][0] = 1.0f / (aspect * tanHalFov);
-        res[1][1] = 1.0f / tanHalFov;
+        res[0][0] = static_cast<T>(1) / (aspect * tanHalFov);
+        res[1][1] = static_cast<T>(1) / tanHalFov;
         res[2][2] = (far + near) / (near - far);
-        res[2][3] = -1.0f;
-        res[3][2] =  2.0f * near * far / (near - far);
+        res[2][3] = -static_cast<T>(1);
+        res[3][2] = static_cast<T>(2) * near * far / (near - far);
+
+        return res;
+    }
+
+    /**
+     * @brief generate a ortho projection matrix
+     * @return Matrix4<T> generated ortho martix
+     */
+    template <typename T>
+    inline Matrix4<T> ortho(T left, T right, T bottom, T top, T near, T far) {
+        Matrix4<T> res(1.0);
+        res[0][0] = static_cast<T>(2) / (right - left);
+        res[1][1] = static_cast<T>(2) / (top - bottom);
+        res[2][2] = - static_cast<T>(2) / (far - near);
+        res[3][0] = - (right + left) / (right - left);
+        res[3][1] = - (top + bottom) / (top - bottom);
+        res[3][2] = - (far + near) / (far - near);
 
         return res;
     }
