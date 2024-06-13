@@ -98,13 +98,13 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix2<U> operator+(T &n, Matrix2<U> &m) {
+    template<typename T>
+    inline Matrix2<T> operator+(T &n, Matrix2<T> &m) {
         return m + n;
     }
 
-    template<typename T, typename U>
-    inline Matrix2<T> operator-(Matrix2<T> &m, U &n) {
+    template<typename T>
+    inline Matrix2<T> operator-(Matrix2<T> &m, T &n) {
         return Matrix2<T>{
             m[0][0] - n,
             m[1][0] - n,
@@ -113,9 +113,9 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix2<U> operator-(T &n, Matrix2<U> &m) {
-        return Matrix2<U>{
+    template<typename T>
+    inline Matrix2<T> operator-(T &n, Matrix2<T> &m) {
+        return Matrix2<T>{
             n - m[0][0],
             n - m[1][0],
             n - m[0][1],
@@ -123,8 +123,8 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix2<T> operator*(Matrix2<T> &m, U &n) {
+    template<typename T>
+    inline Matrix2<T> operator*(Matrix2<T> &m, T &n) {
         return Matrix2<T>{
             m[0][0] * n,
             m[1][0] * n,
@@ -133,13 +133,13 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix2<U> operator*(T &n, Matrix2<U> &m) {
+    template<typename T>
+    inline Matrix2<T> operator*(T &n, Matrix2<T> &m) {
         return m * n;
     }
 
-    template<typename T, typename U>
-    inline Matrix2<T> operator/(Matrix2<T> &m, U &n) {
+    template<typename T>
+    inline Matrix2<T> operator/(Matrix2<T> &m, T &n) {
         return Matrix2<T>{
             m[0][0] / n,
             m[1][0] / n,
@@ -148,9 +148,9 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix2<U> operator/(T &n, Matrix2<U> &m) {
-        return Matrix2<U>{
+    template<typename T>
+    inline Matrix2<T> operator/(T &n, Matrix2<T> &m) {
+        return Matrix2<T>{
             n / m[0][0],
             n / m[1][0],
             n / m[0][1],

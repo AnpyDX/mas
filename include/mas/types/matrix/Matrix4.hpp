@@ -135,8 +135,8 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix4<T> operator+(Matrix4<T> &m, U &n) {
+    template<typename T>
+    inline Matrix4<T> operator+(Matrix4<T> &m, T &n) {
         return Matrix4<T>{
             m[0][0] + n, m[1][0] + n, m[2][0] + n, m[3][0] + n,
             m[0][1] + n, m[1][1] + n, m[2][1] + n, m[3][1] + n,
@@ -145,13 +145,13 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix4<U> operator+(T &n, Matrix4<U> &m) {
+    template<typename T>
+    inline Matrix4<T> operator+(T &n, Matrix4<T> &m) {
         return m + n;
     }
 
-    template<typename T, typename U>
-    inline Matrix4<T> operator-(Matrix4<T> &m, U &n) {
+    template<typename T>
+    inline Matrix4<T> operator-(Matrix4<T> &m, T &n) {
         return Matrix4<T>{
             m[0][0] - n, m[1][0] - n, m[2][0] - n, m[3][0] - n,
             m[0][1] - n, m[1][1] - n, m[2][1] - n, m[3][1] - n,
@@ -160,9 +160,9 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix4<U> operator-(T &n, Matrix4<U> &m) {
-        return Matrix4<U>{
+    template<typename T>
+    inline Matrix4<T> operator-(T &n, Matrix4<T> &m) {
+        return Matrix4<T>{
             n - m[0][0], n - m[1][0], n - m[2][0], n - m[3][0],
             n - m[0][1], n - m[1][1], n - m[2][1], n - m[3][1],
             n - m[0][2], n - m[1][2], n - m[2][2], n - m[3][2],
@@ -170,8 +170,8 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix4<T> operator*(Matrix4<T> &m, U &n) {
+    template<typename T>
+    inline Matrix4<T> operator*(Matrix4<T> &m, T &n) {
         return Matrix4<T>{
             m[0][0] * n, m[1][0] * n, m[2][0] * n, m[3][0] * n,
             m[0][1] * n, m[1][1] * n, m[2][1] * n, m[3][1] * n,
@@ -180,13 +180,13 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix4<U> operator*(T &n, Matrix4<U> &m) {
+    template<typename T>
+    inline Matrix4<T> operator*(T &n, Matrix4<T> &m) {
         return m * n;
     }
 
-    template<typename T, typename U>
-    inline Matrix4<T> operator/(Matrix4<T> &m, U &n) {
+    template<typename T>
+    inline Matrix4<T> operator/(Matrix4<T> &m, T &n) {
         return Matrix4<T>{
             m[0][0] / n, m[1][0] / n, m[2][0] / n, m[3][0] / n,
             m[0][1] / n, m[1][1] / n, m[2][1] / n, m[3][1] / n,
@@ -195,9 +195,9 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix4<U> operator/(T &n, Matrix4<U> &m) {
-        return Matrix4<U>{
+    template<typename T>
+    inline Matrix4<T> operator/(T &n, Matrix4<T> &m) {
+        return Matrix4<T>{
             n / m[0][0], n / m[1][0], n / m[2][0], n / m[3][0],
             n / m[0][1], n / m[1][1], n / m[2][1], n / m[3][1],
             n / m[0][2], n / m[1][2], n / m[2][2], n / m[3][2],

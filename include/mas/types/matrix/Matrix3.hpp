@@ -107,8 +107,8 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix3<T> operator+(Matrix3<T> &m, U &n) {
+    template<typename T>
+    inline Matrix3<T> operator+(Matrix3<T> &m, T &n) {
         return Matrix3<T>{
             m[0][0] + n, m[1][0] + n, m[2][0] + n,
             m[0][1] + n, m[1][1] + n, m[2][1] + n,
@@ -116,13 +116,13 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix3<T> operator+(T &n, Matrix3<U> &m) {
+    template<typename T>
+    inline Matrix3<T> operator+(T &n, Matrix3<T> &m) {
         return m + n;
     }
 
-    template<typename T, typename U>
-    inline Matrix3<T> operator-(Matrix3<T> &m, U &n) {
+    template<typename T>
+    inline Matrix3<T> operator-(Matrix3<T> &m, T &n) {
         return Matrix3<T>{
             m[0][0] - n, m[1][0] - n, m[2][0] - n,
             m[0][1] - n, m[1][1] - n, m[2][1] - n,
@@ -130,17 +130,17 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix3<U> operator-(T &n, Matrix3<U> &m) {
-        return Matrix3<U>{
+    template<typename T>
+    inline Matrix3<T> operator-(T &n, Matrix3<T> &m) {
+        return Matrix3<T>{
             n - m[0][0], n - m[1][0], n - m[2][0],
             n - m[0][1], n - m[1][1], n - m[2][1],
             n - m[0][2], n - m[1][2], n - m[2][2]
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix3<T> operator*(Matrix3<T> &m, U &n) {
+    template<typename T>
+    inline Matrix3<T> operator*(Matrix3<T> &m, T &n) {
         return Matrix3<T>{
             m[0][0] * n, m[1][0] * n, m[2][0] * n,
             m[0][1] * n, m[1][1] * n, m[2][1] * n,
@@ -148,13 +148,13 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix3<U> operator*(T &n, Matrix3<U> &m) {
+    template<typename T>
+    inline Matrix3<T> operator*(T &n, Matrix3<T> &m) {
         return m * n;
     }
 
-    template<typename T, typename U>
-    inline Matrix3<T> operator/(Matrix3<T> &m, U &n) {
+    template<typename T>
+    inline Matrix3<T> operator/(Matrix3<T> &m, T &n) {
         return Matrix3<T>{
             m[0][0] / n, m[1][0] / n, m[2][0] / n,
             m[0][1] / n, m[1][1] / n, m[2][1] / n,
@@ -162,9 +162,9 @@ namespace mas {
         };
     }
 
-    template<typename T, typename U>
-    inline Matrix3<U> operator/(T &n, Matrix3<U> &m) {
-        return Matrix3<U>{
+    template<typename T>
+    inline Matrix3<T> operator/(T &n, Matrix3<T> &m) {
+        return Matrix3<T>{
             n / m[0][0], n / m[1][0], n / m[2][0],
             n / m[0][1], n / m[1][1], n / m[2][1],
             n / m[0][2], n / m[1][2], n / m[2][2]

@@ -17,7 +17,7 @@ namespace mas {
      */
 
     template<typename T>
-    Vector2<T> operator*(const Matrix2<T>& m, const Vector2<T>& v) {
+    Vector2<T> operator*(Matrix2<T>& m, const Vector2<T>& v) {
         return Vector2<T> {
             m[0][0] * v.x + m[1][0] * v.y,
             m[0][1] * v.x + m[1][1] * v.y
@@ -25,7 +25,7 @@ namespace mas {
     }
 
     template <typename T>
-    Vector3<T> operator*(const Matrix3<T>& m, const Vector3<T>& v) {
+    Vector3<T> operator*(Matrix3<T>& m, const Vector3<T>& v) {
         return Vector3<T> {
             m[0][0] * v.x + m[1][0] * v.y + m[2][0] * v.z,
             m[0][1] * v.x + m[1][1] * v.y + m[2][1] * v.z,
@@ -34,7 +34,7 @@ namespace mas {
     }
 
     template <typename T>
-    Vector4<T> operator*(const Matrix4<T>& m, const Vector4<T>& v) {
+    Vector4<T> operator*(Matrix4<T>& m, const Vector4<T>& v) {
         return Vector4<T> {
             m[0][0] * v.x + m[1][0] * v.y + m[2][0] * v.z + m[3][0] * v.w,
             m[0][1] * v.x + m[1][1] * v.y + m[2][1] * v.z + m[3][1] * v.w,
